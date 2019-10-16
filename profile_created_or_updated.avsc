@@ -1,0 +1,18 @@
+{
+    "type": "record",
+    "namespace": "featureengine.example",
+    "name": "ProfileCreatedOrUpdated",
+    "fields": [
+        {"name": "full_name", "type": "string"},
+        {"name": "profile_id", "type": "int"},
+        {"name": "gender", "type": "string", "items": ["m", "f"]},
+        {"name": "zipcode", "type": "int"},
+        {"name": "ethnicity", "type": "string"},
+        {"name": "height_feet", "type": "int"},
+        {"name": "height_inches", "type": "int"},
+        {"name": "religion", "type": "string"},
+        {"name": "latitude", "type": "float"},
+        {"name": "longitude", "type": "float"},
+        {"name": "approved", "type": "boolean"}
+    ]
+}
