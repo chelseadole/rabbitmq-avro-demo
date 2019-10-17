@@ -1,0 +1,45 @@
+version: "3.2"
+services:
+    consumer1:
+        build: .
+        tty: true
+        ports:
+          - "3001"
+        entrypoint: consumer
+        command: --exchange large_event
+
+    consumer2:
+      build: .
+      image: python:3.7-alpine
+      tty: true
+      ports:
+        - "3002"
+      entrypoint: consumer
+      command: --exchange large_event
+
+    consumer3:
+      build: .
+      image: python:3.7-alpine
+      tty: true
+      ports:
+        - "3003"
+      entrypoint: consumer
+      command: --exchange large_event
+
+    consumer4:
+      build: .
+      image: python:3.7-alpine
+      tty: true
+      ports:
+        - "3004"
+      entrypoint: consumer
+      command: --exchange large_event
+
+    consumer5:
+      build: .
+      image: python:3.7-alpine
+      tty: true
+      ports:
+        - "3005"
+      entrypoint: consumer
+      command: --exchange large_event
