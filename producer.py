@@ -5,7 +5,7 @@ import io
 
 import pika
 
-from test_event_bodies import event_bodies
+from event_bodies import event_bodies
 
 
 def send_event(exchange):

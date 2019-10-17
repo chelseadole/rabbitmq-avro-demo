@@ -3,13 +3,12 @@ from avro import io as avro_io
 from avro import schema
 from io import BytesIO
 import sys
-
+import time
 import pika
 
 
 def receive_event(exchange):
     """Receive events from a declared exchange."""
-
     # create connection, declare exchange to consumer
     connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
     channel = connection.channel()
@@ -21,11 +20,15 @@ def receive_event(exchange):
     channel.queue_bind(exchange=exchange, queue=queue_name)
 
     def callback(ch, method, properties, body):
+        start_time = time.clock()
         bytes_reader = BytesIO(body)
         decoder = avro_io.BinaryDecoder(bytes_reader)
         reader = avro_io.DatumReader(schema.Parse(open(f"schemas/{exchange}.avsc", "rb").read()))
         event_body = reader.read(decoder)
-        print(f"Event received! Size: {sys.getsizeof(event_body)} bytes")
+        time.sleep(0.1)  # Mock feature computing time
+        print(f"Event received:"
+              f"size: {sys.getsizeof(event_body)} bytes,"
+              f"time: {time.clock() - start_time} secs")
 
     channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
     channel.start_consuming()
