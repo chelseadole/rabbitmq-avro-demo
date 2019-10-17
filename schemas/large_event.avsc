@@ -122,6 +122,6 @@
         {"name": "117", "type": "float"},
         {"name": "118", "type": "float"},
         {"name": "119", "type": "boolean"},
-        {"name": "120", "type": "boolean"},
+        {"name": "120", "type": "boolean"}
     ]
 }

@@ -185,7 +185,7 @@ event_bodies = {
         "97": True,
         "98": "string",
         "99": 99,
-        "100": "test",
+        "100": "f",
         "101": 101,
         "102": "The blacking-warehouse was the last house on the left-hand side of the way, at old Hungerford Stairs.It"
              "was a crazy, tumble-down old house, abutting of course on the river, and literally overrun with rats."
@@ -217,7 +217,7 @@ event_bodies = {
         "116": "string",
         "117": 117.0,
         "118": 118.0,
-        "119": "string",
+        "119": True,
         "120": True
     }
 }
