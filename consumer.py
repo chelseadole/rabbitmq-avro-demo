@@ -25,7 +25,7 @@ def receive_event(exchange):
         decoder = avro_io.BinaryDecoder(bytes_reader)
         reader = avro_io.DatumReader(schema.Parse(open(f"schemas/{exchange}.avsc", "rb").read()))
         event_body = reader.read(decoder)
-        print(event_body, f"   Size: {sys.getsizeof(event_body)} bytes")
+        print(f"Event received! Size: {sys.getsizeof(event_body)} bytes")
 
     channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
     channel.start_consuming()
