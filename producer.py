@@ -12,7 +12,7 @@ def send_event(exchange):
     """Send an event to publish at an input "exchange"."""
 
     # Get Avro schema, create serialized raw_bytes version of event body
-    event_schema = schema.Parse(open(f"{exchange}.avsc", "rb").read())
+    event_schema = schema.Parse(open(f"schemas/{exchange}.avsc", "rb").read())
     writer = avro_io.DatumWriter(event_schema)
 
     bytes_writer = io.BytesIO()

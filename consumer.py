@@ -23,7 +23,7 @@ def receive_event(exchange):
     def callback(ch, method, properties, body):
         bytes_reader = BytesIO(body)
         decoder = avro_io.BinaryDecoder(bytes_reader)
-        reader = avro_io.DatumReader(schema.Parse(open(f"{exchange}.avsc", "rb").read()))
+        reader = avro_io.DatumReader(schema.Parse(open(f"schemas/{exchange}.avsc", "rb").read()))
         event_body = reader.read(decoder)
         print(event_body, f"   Size: {sys.getsizeof(event_body)} bytes")
 
