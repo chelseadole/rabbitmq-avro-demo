@@ -36,7 +36,7 @@ def receive_event(exchange):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--exchange', type=str, choices=['profile_created_or_updated', 'large_event'], required=True)
+    parser.add_argument('--exchange', type=str, choices=['large_event', 'example'], required=True)
     args = parser.parse_args()
     exchange = args.exchange
 
