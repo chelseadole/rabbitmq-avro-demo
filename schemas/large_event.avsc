@@ -1,6 +1,6 @@
 {
     "type": "record",
-    "namespace": "featureengine.example",
+    "namespace": "example",
     "name": "LargeEvent",
     "fields": [
         {"name": "1", "type": "string"},
