@@ -34,7 +34,7 @@ def send_event(exchange):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--event-count', type=int, required=True)
-    parser.add_argument('--exchange', type=str, choices=['profile_created_or_updated', 'large_event'], required=True)
+    parser.add_argument('--exchange', type=str, choices=['example', 'large_event'], required=True)
     args = parser.parse_args()
     event_count, exchange = args.event_count, args.exchange
 
