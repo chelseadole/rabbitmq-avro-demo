@@ -1,7 +1,7 @@
 {
     "type": "record",
     "namespace": "example",
-    "name": "example",
+    "name": "ExampleEvent",
     "fields": [
         {"name": "full_name", "type": "string"},
         {"name": "profile_id", "type": "int"},
